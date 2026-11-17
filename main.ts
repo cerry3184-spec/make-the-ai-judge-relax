@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
@@ -9,5 +9,5 @@ const TEXT = [
   'When it was done, the net hung from two hands in a long soft ladder of holes. A finger found the last knot, the one just tied, the one that held nothing yet. The net was folded and set by the door for morning.',
 ].join('\n\n');
 
-mkdirSync(OUTPUT_DIR, { recursive: true });
+mkdirSync(OUTPUT_DIR, { recursive: true }); // /output stands in for the container path
 writeFileSync(join(OUTPUT_DIR, 'entry.txt'), TEXT);
